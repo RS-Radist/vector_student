@@ -5,43 +5,13 @@ Student::Student()
 Student::Student(string _name,string _lastName,int _curs):name(_name),lastName(_lastName),curs(_curs)
 {
 }
-std::ostream& operator << (std::ostream &s, Student & st)
+
+std::ostream& operator << (std::ostream &s,Student& temp)
 {
-    s<<st.name<<" | "<<st.lastName<<" | "<<st.curs;
+    s<<temp.name<<" | "<<temp.lastName<<" | "<<temp.curs<<endl<<"-----------------------------"<<endl;
     return s;
 }
-void Student::Print(std::vector<Student>& temp)
-{
-    for(std::vector<Student>::iterator it=temp.begin();it<temp.end();it++)
-    {
-        cout<<*it<<endl;
-    }
-}
 
-void Student::Add(std::vector<Student>& temp)
-{
-    int x=0;
-    do{
-        Student* student;
-        student=new Student;
-        string _name;
-        string _lastName;
-        int _curs;
-        cout<<"Enter the name\n";
-        cin>>_name;
-        cout<<"Enter the last name\n";
-        cin>>_lastName;
-        cout<<"Enter the curs\n";
-        cin>>_curs;
-        student->SetName(_name);
-        student->SetLastName(_lastName);
-        student->SetCurs(_curs);
-        temp.push_back(*student);
-        cout<<"You want replay-plz number one, else quit\n";
-        cin>>x;
-        delete student;
-    }while(x==1);
-}
 void Student::ControlFuncriontSortName(std::vector<Student>& temp)
 {
     for (int i=0;i<temp.size();++i)
@@ -82,7 +52,7 @@ void Student::ControlFuncriontSortCurs(std::vector<Student>& temp)
     {
         for (int j=0;j<temp.size();++j)
         {
-            if(j<3)
+            if(i<3)
             {
                 if (temp[j].curs>temp[j+1].curs)
                 {

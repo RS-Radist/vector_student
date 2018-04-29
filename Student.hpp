@@ -14,8 +14,6 @@ private:
 public:
     Student();
     Student(string _name,string _lastName,int _curs);
-    void Print(std::vector<Student>& temp);
-    void Add(std::vector<Student>& temp);
     void ControlFuncriontSortName(std::vector<Student>& temp);
     void ControlFuncriontSortLastName(std::vector<Student>& temp);
     void ControlFuncriontSortCurs(std::vector<Student>& temp);
